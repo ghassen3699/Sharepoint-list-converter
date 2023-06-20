@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "14.19.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "share-point-list-to-excel-file",
+    "libraryId": "68d3bdfc-32e0-473a-83d3-dcdac026fc2f",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "share-point-list-to-excel-file",
+    "solutionShortDescription": "share-point-list-to-excel-file description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

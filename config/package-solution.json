@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "share-point-list-to-excel-file-client-side-solution",
+    "id": "68d3bdfc-32e0-473a-83d3-dcdac026fc2f",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "share-point-list-to-excel-file description"
+      },
+      "longDescription": {
+        "default": "share-point-list-to-excel-file description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "share-point-list-to-excel-file Feature",
+        "description": "The feature that activates elements of the share-point-list-to-excel-file solution.",
+        "id": "33b86ece-dfac-44d1-9ce6-9afe885461dd",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/share-point-list-to-excel-file.sppkg"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "share-point-list-to-excel-file-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/sharePointListToExcelFile/SharePointListToExcelFileWebPart.js",
+          "manifest": "./src/webparts/sharePointListToExcelFile/SharePointListToExcelFileWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "SharePointListToExcelFileWebPartStrings": "lib/webparts/sharePointListToExcelFile/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}
