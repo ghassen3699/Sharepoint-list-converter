@@ -1,4 +1,4 @@
-# share-point-list-to-excel-file
+# sharepoint-list-to-excel-file
 
 ## Summary
 
