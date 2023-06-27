@@ -22,19 +22,46 @@ export default class SharePointListToExcelFile extends React.Component<ISharePoi
     this.setState({listData:data})
   }
 
+  // add sharepoint items to Excel file
   convertListDataToExcelFile = () => {
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet('List Data');
     const fileName = 'SharePointList.xlsx';
-    worksheet.addRow(['Raison', 'Nombredejour', 'Status']); // Add header row
-
-    this.state.listData.forEach((item : any) => {
-      worksheet.addRow([item.Raison, item.Nombredejour, item.Status]); // Add data rows
+    const columns = ['Raison', 'Nombredejour', 'Status'];
+  
+    worksheet.addRow(columns); // Add header row
+  
+    this.state.listData.forEach((item: any) => {
+      const rowData = columns.map(column => item[column]);
+      worksheet.addRow(rowData); // Add data rows
+    });
+  
+    worksheet.columns.forEach(column => {
+      let maxColumnWidth = 0;
+      column.eachCell({ includeEmpty: true }, cell => {
+        const columnWidth = cell.value ? cell.value.toString().length + 2 : 10;
+        if (columnWidth > maxColumnWidth) {
+          maxColumnWidth = columnWidth;
+        }
+      });
+      column.width = maxColumnWidth;
     });
 
+    worksheet.getRow(1).eachCell(cell => {
+      cell.fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: { argb: '000000' }, // Black color code
+      };
+      cell.font = {
+        color: { argb: 'FFFFFF' }, // White color code
+        bold: true,
+      };
+    });
+  
     workbook.xlsx.writeBuffer().then((buffer: ArrayBuffer) => {
       const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-    
+  
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
@@ -51,7 +78,8 @@ export default class SharePointListToExcelFile extends React.Component<ISharePoi
     
     return (
       <div>
-          webpart
+          Download Excel File
+          <br></br>
           <PrimaryButton onClick={() => this.convertListDataToExcelFile()}>Click</PrimaryButton>
       </div>
     );
