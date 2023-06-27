@@ -1,4 +1,4 @@
-# sharepoint-list-to-excel-file
+# SPFX Webpart for convert Microsoft sharepoint list to excel-file
 
 ## Summary
 
